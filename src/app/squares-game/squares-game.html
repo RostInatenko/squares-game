@@ -1,0 +1,66 @@
+<main class="game-page">
+  <section class="game-card">
+    <h1>Squares Mini-Game</h1>
+    <p class="subtitle">Click highlighted cells before time runs out.</p>
+
+    <div class="controls">
+      <label for="turn-time-input">
+        Time to click (milliseconds)
+      </label>
+      <input
+        id="turn-time-input"
+        type="number"
+        min="100"
+        max="10000"
+        [value]="turnDurationMs()"
+        (input)="onDurationInput($event)"
+        (blur)="onDurationBlur()"
+      />
+      <button #startBtn type="button" (click)="startGame()">Start</button>
+    </div>
+
+    <div class="scoreboard" aria-live="polite">
+      <div class="score-item">
+        <span>Player</span>
+        <strong>{{ playerScore() }}</strong>
+      </div>
+      <div class="score-item">
+        <span>Computer</span>
+        <strong>{{ computerScore() }}</strong>
+      </div>
+      <div class="score-item">
+        <span>Target</span>
+        <strong>{{ targetScore }}</strong>
+      </div>
+    </div>
+
+    <section class="grid" [class.is-disabled]="!gameStarted() || gameOver()" aria-label="Game board">
+      @for (cell of cells(); track cell.id) {
+        <button
+          type="button"
+          class="cell"
+          [class.cell--active]="cell.state === 'active'"
+          [class.cell--player]="cell.state === 'player'"
+          [class.cell--computer]="cell.state === 'computer'"
+          (click)="onCellClick($index)"
+          [disabled]="cell.state !== 'active' || gameOver() || !gameStarted()"
+          [attr.aria-label]="'Cell ' + (cell.id + 1)"
+        ></button>
+      }
+    </section>
+  </section>
+
+  @if (gameOver()) {
+    <div class="modal-backdrop" role="presentation"></div>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <h2 id="modal-title">Game Over</h2>
+      @if (winner()) {
+        <p>{{ winner() }} wins!</p>
+      } @else {
+        <p>It is a draw.</p>
+      }
+      <p>Final score: {{ playerScore() }} - {{ computerScore() }}</p>
+      <button #closeBtn type="button" (click)="closeModal()">Close</button>
+    </section>
+  }
+</main>

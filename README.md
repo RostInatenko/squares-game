@@ -1,59 +1,37 @@
-# SquaresGame
+# Squares Game
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.9.
+A real-time reaction game built with Angular 21. A cell lights up on a 10×10 grid — click it before the timer expires. First to 10 points wins.
 
-## Development server
+## Prerequisites
 
-To start a local development server, run:
+- [Node.js](https://nodejs.org/) v22 or later
+- npm v10 or later (bundled with Node.js)
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Getting started
 
 ```bash
-ng generate component component-name
+# Install dependencies
+npm install
+
+# Start the dev server
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Open [http://localhost:4200](http://localhost:4200) in your browser. The page reloads automatically when you save a file.
 
-```bash
-ng generate --help
-```
+## Available commands
 
-## Building
+| Command | Description |
+|---|---|
+| `npm start` | Start the dev server at localhost:4200 |
+| `npm test` | Run unit tests with Vitest |
+| `npm run build` | Production build → `dist/squares-game/browser/` |
+| `npm run watch` | Dev build that rebuilds on file changes |
 
-To build the project run:
+## Deployment
 
-```bash
-ng build
-```
+The app is deployed to GitHub Pages automatically on every push to `main` via the workflow in `.github/workflows/deploy.yml`.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Live URL: `https://<username>.github.io/squares-game/`
 
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+To trigger a deploy manually, push any commit to `main`.
