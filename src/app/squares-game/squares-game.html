@@ -15,8 +15,9 @@
         [value]="turnDurationMs()"
         (input)="onDurationInput($event)"
         (blur)="onDurationBlur()"
+        [disabled]="gameStarted()"
       />
-      <button #startBtn type="button" (click)="startGame()">Start</button>
+      <button #startBtn type="button" (click)="startGame()">{{ gameStarted() ? 'Restart' : 'Start' }}</button>
     </div>
 
     <div class="scoreboard" aria-live="polite">

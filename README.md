@@ -32,6 +32,6 @@ Open [http://localhost:4200](http://localhost:4200) in your browser. The page re
 
 The app is deployed to GitHub Pages automatically on every push to `main` via the workflow in `.github/workflows/deploy.yml`.
 
-Live URL: `https://<username>.github.io/squares-game/`
+Live URL: https://rostinatenko.github.io/squares-game/
 
 To trigger a deploy manually, push any commit to `main`.
