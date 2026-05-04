@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { SquaresGameComponent } from './squares-game/squares-game.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [SquaresGameComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

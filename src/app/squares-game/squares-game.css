@@ -1,6 +1,7 @@
 :host {
   display: block;
   min-height: 100dvh;
+  overflow: hidden;
   background: #f3f5f7;
   color: #1f2937;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -87,12 +88,17 @@ h1 {
 .grid {
   display: grid;
   grid-template-columns: repeat(10, minmax(0, 1fr));
+  grid-template-rows: repeat(10, minmax(0, 1fr));
   gap: 0.4rem;
+  aspect-ratio: 1;
+  /* cap grid size so the full card fits in the viewport */
+  width: min(100%, calc(100dvh - 20rem));
+  margin: 0 auto;
 }
 
 .cell {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 100%;
   border-radius: 8px;
   border: 1px solid #8ab7ff;
   background: #4f9bff;
