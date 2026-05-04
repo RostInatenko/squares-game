@@ -1,12 +1,10 @@
 <main class="game-page">
   <section class="game-card">
-    <h1>Squares Mini-Game</h1>
+    <h1>Interactive Mini-Game</h1>
     <p class="subtitle">Click highlighted cells before time runs out.</p>
 
     <div class="controls">
-      <label for="turn-time-input">
-        Time to click (milliseconds)
-      </label>
+      <label for="turn-time-input">N (milliseconds)</label>
       <input
         id="turn-time-input"
         type="number"
@@ -43,7 +41,7 @@
           [class.cell--active]="cell.state === 'active'"
           [class.cell--player]="cell.state === 'player'"
           [class.cell--computer]="cell.state === 'computer'"
-          (click)="onCellClick($index)"
+          (click)="onCellClick(cell.id)"
           [disabled]="cell.state !== 'active' || gameOver() || !gameStarted()"
           [attr.aria-label]="'Cell ' + (cell.id + 1)"
         ></button>

@@ -8,9 +8,7 @@ export interface Cell {
   state: CellState;
 }
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class SquaresGameEngineService {
   createInitialCells(gridSize: number): Cell[] {
     return Array.from({ length: gridSize * gridSize }, (_, index) => ({

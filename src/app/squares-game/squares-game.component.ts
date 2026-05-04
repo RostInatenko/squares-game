@@ -21,7 +21,8 @@ import {
   standalone: true,
   templateUrl: './squares-game.html',
   styleUrl: './squares-game.css',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  providers: [SquaresGameEngineService]
 })
 export class SquaresGameComponent implements OnDestroy {
   private readonly gameEngine = inject(SquaresGameEngineService);
