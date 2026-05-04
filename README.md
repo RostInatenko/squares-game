@@ -1,4 +1,4 @@
-# Squares Game
+# Interactive Mini-Game
 
 A real-time reaction game built with Angular 21. A cell lights up on a 10×10 grid — click it before the timer expires. First to 10 points wins.
 
